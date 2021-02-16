@@ -22,7 +22,7 @@ const StudentSchema = new Schema({
         // Validate the 'password' value length
         validate: [
             (password) => password.length >= 6,
-            'Password Should Be Longer'
+            'Password Should Be More than 6 characters'
         ]
     },
     randomques1: String,

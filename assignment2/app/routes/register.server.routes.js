@@ -6,6 +6,7 @@ module.exports = function (app) {
     //register route url
      
     app.get('/register', register.displayRegPage);
+    app.post('/register_student', register.create);
 
     
   };
