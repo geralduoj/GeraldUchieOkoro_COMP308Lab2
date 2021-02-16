@@ -14,6 +14,17 @@ var questions = [
   "Strongest Technical Skill:"
 ];
 
+var dictOfQuestions = { 
+  FavoriteSubject : "Favorite subject:", 
+  Numberoflanguages : "Number of languages:",
+  Major : "Major:",
+  FavoriteSport : "Favorite Sport:",
+  FavoriteTeam : "Favorite Team:",
+  FavoriteActor : "Favorite Actor:",
+  FavoriteFood : "Favorite Food:",
+  StrongestTechnicalSkill : "Strongest Technical Skill:",
+};
+
 exports.displayRegPage = function (req, res) {
 
   generateTwoNumbers();
