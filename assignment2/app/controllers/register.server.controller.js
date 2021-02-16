@@ -15,14 +15,17 @@ var questions = [
 ];
 
 var dictOfQuestions = { 
-  FavoriteSubject : "Favorite subject:", 
-  Numberoflanguages : "Number of languages:",
-  Major : "Major:",
-  FavoriteSport : "Favorite Sport:",
-  FavoriteTeam : "Favorite Team:",
-  FavoriteActor : "Favorite Actor:",
-  FavoriteFood : "Favorite Food:",
-  StrongestTechnicalSkill : "Strongest Technical Skill:",
+  "FavoriteSubject" : "FavoriteSubject", 
+  "Numberoflanguages" : "Numberoflanguages",
+  "Major" : "Major:",
+  "FavoriteSport" : "FavoriteSport",
+  "FavoriteTeam" : "FavoriteTeam",
+  "FavoriteActor" : "FavoriteActor",
+  "FavoriteFood" : "FavoriteFood",
+  "StrongestTechnicalSkill" : "StrongestTechnicalSkill",
+  key: function(n) {
+    return this[Object.keys(this)[n]];
+  }
 };
 
 exports.displayRegPage = function (req, res) {
@@ -33,6 +36,8 @@ exports.displayRegPage = function (req, res) {
     res.render('register', {
       randques1: questions[numberOne],
       randques2: questions[numberTwo],
+      actualques1: dictOfQuestions.key(numberOne),
+      actualques2: dictOfQuestions.key(numberTwo),
       errAdd: []
   });
 };
@@ -54,6 +59,8 @@ exports.create = function(req, res, next) {
             res.render('register', {
               randques1: questions[numberOne],
               randques2: questions[numberTwo],
+              actualques1: dictOfQuestions.key(numberOne),
+              actualques2: dictOfQuestions.key(numberTwo),
               errAdd: errAdd
             });
             

@@ -25,8 +25,16 @@ const StudentSchema = new Schema({
             'Password Should Be More than 6 characters'
         ]
     },
-    randomques1: String,
-    randomques2: String
+    FavoriteSubject: String,
+    Numberoflanguages: String,
+    Major: String,
+    FavoriteSport: String,
+    FavoriteTeam: String,
+    FavoriteActor: String,
+    FavoriteFood: String,
+    StrongestTechnicalSkill: String
+
+
     
 });
 
