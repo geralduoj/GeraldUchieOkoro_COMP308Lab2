@@ -22,6 +22,17 @@ exports.displayInfo = function (req, res) {
 
 exports.displayPage = function (req, res) {
 
+  var questions = [
+    "Favorite subject:",
+    "Number of languages:",
+    "Major:",
+    "Favorite Sport:",
+    "Favorite Team:",
+    "Favorite Actor:",
+    "Favorite Food:",
+    "Strongest Technical Skill:"
+  ];
+
   var session = req.session;
   if (!session.username){
     //display the ejs page
