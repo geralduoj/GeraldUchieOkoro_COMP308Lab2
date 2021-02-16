@@ -26,12 +26,7 @@ const StudentSchema = new Schema({
         ]
     },
     randomques1: String,
-    randomques2: String,
-    randomques3: String,
-    randomques4: String,
-    randomques5: String,
-    randomques6: String,
-    randomques7: String
+    randomques2: String
     
 });
 

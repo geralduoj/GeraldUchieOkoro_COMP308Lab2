@@ -12,13 +12,23 @@
     
     
     <main class="form-fs">
-      <form method="post">
+      <form action="/register_student" method="post">
         <img class="mb-4" src="img/netflix_logo_sm.png" alt="" width="222" height="61">
-        <h1 class="h3 mb-3 fw-normal">Login to evaluate the course</h1>
-        <label for="userName" class="visually-hidden">Username</label>
-        <input type="userName" id="userName" name="username" class="form-control col-sm" placeholder="Username" required autofocus>
+        <h1 class="h3 mb-3 fw-normal">Register to evaluate the course</h1>
+        <label for="firstName" class="visually-hidden">firstName</label>
+        <input type="text" name="firstName" class="form-control col-sm" placeholder="First Name" required autofocus>
+        <label for="lastName" class="visually-hidden">lastName</label>
+        <input type="text" name="lastName" class="form-control col-sm" placeholder="Last Name" required autofocus>
+        <label for="email" class="visually-hidden">Email</label>
+        <input type="text" name="email" class="form-control col-sm" placeholder="Email" required autofocus>
         <label for="inputPassword" class="visually-hidden">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
+
+        <label for="SecurityQuestion">Security Question</label>
+        <label for="SecurityQuestion1" class="visually-hidden"><%= randques1 %></label>
+        <input type="text" name="randomques1" class="form-control col-sm" placeholder="<%= randques1 %>" required autofocus>
+        <label for="SecurityQuestion1" class="visually-hidden"><%= randques2 %></label>
+        <input type="text" name="randomques2" class="form-control col-sm" placeholder="<%= randques2 %>" required autofocus>
         <br/>
         <br/>
         
