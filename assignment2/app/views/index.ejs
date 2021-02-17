@@ -12,13 +12,20 @@
     
     
     <main class="form-fs">
-      <form method="post">
+
+      <%if (errorText.length > 0) { %>
+        <div class="alert alert-danger" role="alert">
+          <%= errorText %>
+        </div>
+      <% } %>
+
+      <form action="/login_student" method="post">
         <img class="mb-4" src="img/netflix_logo_sm.png" alt="" width="222" height="61">
         <h1 class="h3 mb-3 fw-normal">Login to evaluate the course</h1>
-        <label for="userName" class="visually-hidden">Username</label>
-        <input type="userName" id="userName" name="username" class="form-control col-sm" placeholder="Username" required autofocus>
+        <label for="email" class="visually-hidden">email</label>
+        <input type="text" id="email" name="email" class="form-control col-sm" placeholder="john@gmail.com" required autofocus>
         <label for="inputPassword" class="visually-hidden">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
         <br/>
         <br/>
         
