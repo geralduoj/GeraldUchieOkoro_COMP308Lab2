@@ -9,9 +9,15 @@
   </head>
   <body class="text-center">
     <main class="form-signin">
+      <a type="button" class="btn btn-danger">Make Comment</a>
+      <a type="button" class="btn btn-danger">Show Comments</a>
+      <a type="button" class="btn btn-danger">View Profile</a>
+      <a type="button" class="btn btn-danger">Logout</a>
+      <br/>
+      <br/>
       <h1>Make your comment</h1>
 
-      <p>Email: <%= studentObj.email %></p>
+      <p>Welcome, <%= studentObj.email %></p>
       <form action="/makeComment" method="post">
         <div class="mb-3 row">
           <label class="col-sm-2 col-form-label">Course Code:</label>
