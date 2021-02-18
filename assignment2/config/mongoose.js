@@ -13,8 +13,9 @@ module.exports = function () {
 		console.log('Error');
 		});
 
-    // Load the 'User' model 
+    // Load the models
     require('../app/models/student.server.model');
+    require('../app/models/comments.server.model');
     // Return the Mongoose connection instance
     return db;
 };

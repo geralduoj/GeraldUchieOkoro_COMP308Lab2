@@ -42,9 +42,10 @@ module.exports = function () {
     app.set('view engine', 'ejs');
     app.engine('html', require('ejs').renderFile);
 
-    // Load the 'index' routing file
+    // Load the routing files
     require('../app/routes/index.server.routes.js')(app);
     require('../app/routes/register.server.routes.js')(app);
+    require('../app/routes/comment.server.routes.js')(app);
 
     // Configure static file serving
     app.use(express.static('./public'));

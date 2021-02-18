@@ -15,11 +15,6 @@ module.exports = function (app) {
     index.loginUser(req, res);
   });
 
-  app.post("/display", function (req, res) {
-    //use the controller function
-    index.makeComment(req, res);
-  });
-
   app.get('/display', index.displayPage);
   app.get('/logout', index.logout);
 };
