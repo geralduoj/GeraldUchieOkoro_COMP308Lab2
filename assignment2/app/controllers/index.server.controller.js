@@ -1,3 +1,6 @@
+// Load the 'Student' Mongoose model
+const Student = require('mongoose').model('Student');
+
 exports.displayInfo = function (req, res) {
   //get user input using request object
   
@@ -18,6 +21,24 @@ exports.displayInfo = function (req, res) {
         title: 'Login page'
     });
   }
+};
+
+exports.loginUser = function (req, res) {
+
+  var email = req.body.email;
+	// Use the 'User' static 'findOne' method to retrieve a specific user
+	Student.findOne({
+		email: email //using the username instead of id
+	}, (err, student) => {
+		if (err) {
+			// Call the next middleware with an error message
+			console.log(err);
+		} else {
+			// Set the 'req.user' property
+            console.log(student);
+			// Call the next middleware
+		}
+	});
 };
 
 exports.displayPage = function (req, res) {

@@ -8,18 +8,11 @@
     <link href="css/signin.css" rel="stylesheet">
     
   </head>
-  <body class="text-center">
-    
-    
-    <main class="form-fs">
+  <body class="row justify-content-center text-center">
 
-      <%if (errorText.length > 0) { %>
-        <div class="alert alert-danger" role="alert">
-          <%= errorText %>
-        </div>
-      <% } %>
+    <main class="row form-fs">
 
-      <form action="/login_student" method="post">
+      <form method="post">
         <img class="mb-4" src="img/netflix_logo_sm.png" alt="" width="222" height="61">
         <h1 class="h3 mb-3 fw-normal">Login to evaluate the course</h1>
         <label for="email" class="visually-hidden">email</label>

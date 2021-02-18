@@ -12,7 +12,7 @@ module.exports = function (app) {
   //the form uses a post request to the same path ('/')
   app.post("/", function (req, res) {
     //use the controller function
-    index.displayInfo(req, res);
+    index.loginUser(req, res);
   });
 
   app.post("/display", function (req, res) {
