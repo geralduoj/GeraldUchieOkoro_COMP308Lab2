@@ -18,7 +18,7 @@ var questions = [
 var dictOfQuestions = { 
   "FavoriteSubject" : "FavoriteSubject", 
   "Numberoflanguages" : "Numberoflanguages",
-  "Major" : "Major:",
+  "Major" : "Major",
   "FavoriteSport" : "FavoriteSport",
   "FavoriteTeam" : "FavoriteTeam",
   "FavoriteActor" : "FavoriteActor",
@@ -47,6 +47,7 @@ exports.displayRegPage = function (req, res) {
 
 exports.create = function(req, res, next) {
   generateTwoNumbers();
+  var session = req.session;
 	// Create a new instance of the 'User' Mongoose model
 	const student = new Student(req.body);
   student.save((err) => {
@@ -68,7 +69,11 @@ exports.create = function(req, res, next) {
         //res.json(err);
     }else {
   // Use the 'response' object to send a JSON response
-        res.json(student);
+        session.student = student
+        res.render("display", {
+          studentObj: session.student,
+          titlePage: "Student Comment",
+        });
       }
 });
 };
