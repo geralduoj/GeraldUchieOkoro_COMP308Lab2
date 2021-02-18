@@ -1,6 +1,3 @@
-// Load the 'Student' Mongoose model
-const Student = require('mongoose').model('Student');
-
 exports.displayInfo = function (req, res) {
   //get user input using request object
   
@@ -21,35 +18,6 @@ exports.displayInfo = function (req, res) {
         title: 'Login page'
     });
   }
-};
-
-exports.login = function (req, res, next){
-  req.student = req.body;
-
-  var studentemail = req.body.email;
-
-  Student.find({
-        email: studentemail //finding a document by username
-  }, (err, student) => {
-        if (err) {
-            // Call the next middleware with an error message
-            res.render('index', {
-              loginMessage: "Please login",
-              errorText: "There was an error loggin you in!"
-            });
-        }
-        else if(student == null){
-            res.render('index', {
-              loginMessage: "Please login",
-              errorText: "No login information for that account!"
-            });
-        } else {
-            // Set the 'req.user' property
-            req.student = student;
-            //parse it to a JSON object
-            console.log(req.student);
-        }
-  });
 };
 
 exports.displayPage = function (req, res) {

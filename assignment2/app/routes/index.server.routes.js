@@ -6,13 +6,13 @@ module.exports = function (app) {
   //by showing the login screen
   app.get("/", function (req, res) {
     //display login page
-    res.render("index", { loginMessage: "Please login", errorText: "" });
+    res.render("index", { loginMessage: "Please login" });
   });
   
   //the form uses a post request to the same path ('/')
-  app.post("/login_student", function (req, res) {
+  app.post("/", function (req, res) {
     //use the controller function
-    index.login(req, res);
+    index.displayInfo(req, res);
   });
 
   app.post("/display", function (req, res) {

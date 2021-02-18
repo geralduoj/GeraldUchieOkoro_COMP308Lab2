@@ -29,6 +29,7 @@ var dictOfQuestions = {
   }
 };
 
+
 exports.displayRegPage = function (req, res) {
 
   generateTwoNumbers();
