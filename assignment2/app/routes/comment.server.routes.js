@@ -5,7 +5,10 @@ module.exports = function (app) {
     app.post("/makeComment", function (req, res) {
         //use the controller function
         comment.makeComment(req, res);
-      });
+    });
+
+    app.get('/comments', comment.commentsPage);
+    app.get('/profile', comment.profilePage);
   
     
   };

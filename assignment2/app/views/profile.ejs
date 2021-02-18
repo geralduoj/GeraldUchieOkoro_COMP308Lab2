@@ -9,11 +9,17 @@
   </head>
   <body class="text-center">
     <main class="form-signin">
-      <h1>Thank you <%= studentObj.firstname %></h1>
-      <blockquote class="blockquote">
-        <p>We appreciate your comments: <%= studentObj.email %></p>
-        <a href="/comments" class="btn btn-danger stretched-link">View All Comments</a>
-      </blockquote>
+      <a href="/display" type="button" class="btn btn-danger">Make Comment</a>
+      <a href="/comments" type="button" class="btn btn-danger">Show Comments</a>
+      <a href="/profile" type="button" class="btn btn-danger">View Profile</a>
+      <a href="/logout" type="button" class="btn btn-danger">Logout</a>
+      <br/>
+      <br/>
+      <h1>Your Profile</h1>
+
+      <p>Welcome, <%= studentObj.email %></p>
+      
+      
     </main>
     
   </body>

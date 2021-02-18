@@ -1,28 +1,6 @@
 // Load the 'Student' Mongoose model
 const Student = require('mongoose').model('Student');
 
-exports.displayInfo = function (req, res) {
-  //get user input using request object
-  
-  //make a reference to the session object
-  var session = req.session;
-  //store the username in session object
-  var username = req.body.username;
-  session.username = username;
-
-  if (session.username) {
-    res.redirect('/display');
-    console.log("username in session: " + session.username);
-  }
-  else {
-    
-    //display the ejs page
-    res.render('index', {
-        title: 'Login page'
-    });
-  }
-};
-
 exports.loginUser = function (req, res) {
 
   var email = req.body.email;
