@@ -26,6 +26,8 @@ exports.displayInfo = function (req, res) {
 exports.loginUser = function (req, res) {
 
   var email = req.body.email;
+  var session = req.session;
+
 	// Use the 'User' static 'findOne' method to retrieve a specific user
 	Student.findOne({
 		email: email //using the username instead of id
@@ -35,7 +37,12 @@ exports.loginUser = function (req, res) {
 			console.log(err);
 		} else {
 			// Set the 'req.user' property
-            console.log(student);
+      session.student = student
+      res.render("display", {
+        studentObj: session.student,
+        titlePage: "Student Comment",
+      });
+      console.log(session.student);
 			// Call the next middleware
 		}
 	});
@@ -44,14 +51,14 @@ exports.loginUser = function (req, res) {
 exports.displayPage = function (req, res) {
 
   var session = req.session;
-  if (!session.username){
+  if (!session.student){
     //display the ejs page
     res.redirect('/');
   }
   else{
     res.render("display", {
-      username: session.username,
-      stdComments: "Student Comment",
+      studentObj: session.student,
+      titlePage: "Student Comment",
     });
   }
 
