@@ -28,12 +28,12 @@ exports.makeComment = function (req, res) {
 exports.commentsPage = function (req, res) {
 
     var session = req.session;
-    var studentID = session.student._id
     if (!session.student){
       //display the ejs page
       res.redirect('/');
     }
     else{
+        var studentID = session.student._id
         Comment.find({student:ObjectId(studentID)}, (err, comments) => {
             if (err) {
                 // Call the next middleware with an error message
