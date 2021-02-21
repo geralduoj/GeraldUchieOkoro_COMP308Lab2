@@ -14,14 +14,22 @@ exports.loginUser = function (req, res) {
 			// Call the next middleware with an error message
 			console.log(err);
 		} else {
-			// Set the 'req.user' property
-      session.student = student
-      res.render("display", {
-        studentObj: session.student,
-        titlePage: "Student Comment",
-      });
+      if(student.password !== req.body.password){
+        res.render("index", {
+          loginMessage: "Failed user login"
+        });
+      }
+      else{
+        session.student = student
+        res.render("display", {
+          studentObj: session.student,
+          titlePage: "Student Comment",
+        });
       console.log(session.student);
 			// Call the next middleware
+      }
+			// Set the 'req.user' property
+      
 		}
 	});
 };
